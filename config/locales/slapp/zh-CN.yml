@@ -1,0 +1,18 @@
+zh-CN:
+  views:
+      pagination:
+        first: "首页"
+        last: "末页"
+        previous: "上页"
+        next: "下页"
+        truncate: "..."
+  global:
+    application:
+      name: "神路内部办公系统"
+    menu:
+      home: "首页"
+      lunch: "点餐系统"
+      record: "工作日志"
+      todo: "待办事项"
+      signup: "注册"
+      signin: "登录"

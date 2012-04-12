@@ -1,0 +1,18 @@
+en:
+  views:
+      pagination:
+        first: "First"
+        last: "Last"
+        previous: "Previous"
+        next: "Next"
+        truncate: "..."
+  global:
+    application:
+      name: "ShenLu Internal Application"
+    menu:
+      home: "Home"
+      lunch: "Lunch Order"
+      record: "Work Record"
+      todo: "Todo"
+      signup: "Sign Up"
+      signin: "Sign In"
