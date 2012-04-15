@@ -29,10 +29,16 @@
           <li><%= link_to t('global.menu.todo') %></li>
         </ul>
         <ul class="nav pull-right">
+          <% if user_signed_in? %>
+              <li><a href="#"><%= t('global.menu.current_signin') %><%= current_user.username %></a></li>            
               <li>
-                <%= link_to t('global.menu.signin') %></li>
+                <%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
+          <% else %>
               <li>
-                <%= link_to t('global.menu.signup') %></li>
+                <%= link_to t('global.menu.signup'), new_user_registration_path %></li>
+              <li>
+                <%= link_to t('global.menu.signin'), new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

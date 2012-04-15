@@ -16,3 +16,5 @@ zh-CN:
       todo: "待办事项"
       signup: "注册"
       signin: "登录"
+      signout: "退出"
+      current_signin: "当前用户："

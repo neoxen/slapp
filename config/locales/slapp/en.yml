@@ -16,3 +16,5 @@ en:
       todo: "Todo"
       signup: "Sign Up"
       signin: "Sign In"
+      signout: "Sign Out"
+      current_signin: "Signed in as "
