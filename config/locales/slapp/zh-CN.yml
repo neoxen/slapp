@@ -14,6 +14,7 @@ zh-CN:
       lunch: "点餐系统"
       record: "工作日志"
       todo: "待办事项"
+      gosub: "访问"
       signup: "注册"
       signin: "登录"
       signout: "退出"

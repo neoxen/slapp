@@ -14,6 +14,7 @@ en:
       lunch: "Lunch Order"
       record: "Work Record"
       todo: "Todo"
+      gosub: "Visit"
       signup: "Sign Up"
       signin: "Sign In"
       signout: "Sign Out"
