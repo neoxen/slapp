@@ -2,7 +2,7 @@
     <%= devise_error_messages! %>
 
     <fieldset>
-      <legend>Sign up</legend>
+      <legend><%= t('global.menu.signup') %></legend>
       <div class="control-group">
         <%= f.label :username, :class => 'control-label' %>
         <div class="controls">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="form-actions">
-        <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+        <%= f.submit t('global.menu.signup'), :class => 'btn btn-primary' %>
       </div>
     </fieldset>
 <% end %>
