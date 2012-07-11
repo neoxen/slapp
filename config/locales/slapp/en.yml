@@ -11,6 +11,7 @@ en:
       name: "ShenLu Internal Application"
     menu:
       home: "Home"
+      blog: "Personal Blog"
       lunch: "Lunch Order"
       record: "Work Record"
       todo: "Todo"
