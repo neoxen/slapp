@@ -4,12 +4,12 @@
       <div class="span4">
       	<div class="hero-unit center">
   			<p><%= t('global.menu.blog') %></p>
-  			<p>
-    			<a class="btn btn-primary btn-large">
-      			<i class="icon-comment icon-white"></i>&nbsp;<%= t('global.menu.gosub') %>
-    			</a>
-  			</p>
-		</div>
+    			<p>
+      			<%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
+                <i class="icon-comment icon-black"></i>&nbsp;<%= t('global.menu.gosub') %>
+            <% end %>
+    			</p>
+  			</div>
       </div>
       <div class="span4">
          <div class="hero-unit center">
