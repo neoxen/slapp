@@ -1,13 +1,11 @@
 <h1>Listing posts</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @posts.each do |post| %>
@@ -15,13 +13,14 @@
     <td><%= post.name %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', post , :class => 'btn btn-mini' %>
+    <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
+    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete ,:class => 'btn btn-mini btn-danger'%>
+    </td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
+<div class="form-actions">
+  <%= link_to 'New Post', new_post_path, :class => 'btn btn-primary'%>
+</div>
