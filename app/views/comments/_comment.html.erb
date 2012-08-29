@@ -1,0 +1,9 @@
+<blockquote>
+	<p><%= comment.body %></p>
+	<small><%= comment.commenter %>&nbsp;&nbsp; 
+		<%= link_to 'Delete this', [comment.post, comment], 
+			:confirm => 'Are you sure?',
+      :method => :delete ,
+      :class => 'btn btn-mini btn-danger' %>
+   </small>
+</blockquote>
