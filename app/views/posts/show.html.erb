@@ -5,6 +5,10 @@
   <dd><%= @post.title %></dd>
   <dt>Content</dt>
   <dd><%= @post.content %></dd>
+  <dt>Tags</dt>
+  <dd>
+    <%= join_tags(@post) %>
+  </dd>
   <dt>Comments</dt>
   <dd>
     <%= render @post.comments %>    
