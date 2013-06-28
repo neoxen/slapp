@@ -8,10 +8,10 @@ zh-CN:
         truncate: "..."
   global:
     application:
-      name: "神路内部办公系统"
+      name: "武汉智慧城市研究院内部办公系统"
     menu:
       home: "首页"
-      blog: "个人博客"
+      blog: "通知公告"
       lunch: "点餐系统"
       record: "工作日志"
       todo: "待办事项"

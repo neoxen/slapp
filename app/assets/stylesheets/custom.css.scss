@@ -1,13 +1,21 @@
+$navbarHeight: 40px;
+$navbarBackground: white;
+
 @import "bootstrap";
 
 /* universal */
+
 
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+div.nav-collapse {
+  margin-top: 10px;
 }
 
 section {
