@@ -1,12 +1,18 @@
 Slapp::Application.routes.draw do
-  
+
+  root :to => 'index#index'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resources :posts do
     resources :comments
   end
 
   devise_for :users
+  ActiveAdmin.routes(self)
 
-  root :to => 'index#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
