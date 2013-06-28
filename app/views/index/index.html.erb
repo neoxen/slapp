@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="span12">
     <div class="row-fluid">
-      <div class="span3">
+      <div class="span6">
       	<div class="hero-unit center">
   			<p><%= t('global.menu.blog') %></p>
     			<p>
@@ -11,7 +11,7 @@
     			</p>
   			</div>
       </div>
-      <div class="span3">
+      <div class="span6">
          <div class="hero-unit center">
   			<p><%= t('global.menu.lunch') %></p>
   			<p>
@@ -20,26 +20,6 @@
             <% end %>
   			</p>
 		</div>
-      </div>
-      <div class="span3">
-        <div class="hero-unit center">
-  			<p><%= t('global.menu.todo') %></p>
-  			<p>
-    			<%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
-                <i class="icon-comment icon-black"></i>&nbsp;<%= t('global.menu.gosub') %>
-            <% end %>
-  			</p>
-		</div>
-      </div>
-      <div class="span3">
-        <div class="hero-unit center">
-        <p><%= t('global.menu.expense') %></p>
-        <p>
-          <%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
-                <i class="icon-comment icon-black"></i>&nbsp;<%= t('global.menu.gosub') %>
-            <% end %>
-        </p>
-    </div>
       </div>
     </div>
   </div>
