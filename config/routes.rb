@@ -1,5 +1,11 @@
 Slapp::Application.routes.draw do
 
+
+  get '/dishes/:id/set', to: 'dishes#set_is_today', as: 'set_is_today'
+  get '/dishes/:id/unset', to: 'dishes#unset_is_today', as: 'unset_is_today'
+
+  resources :dishes
+
   root :to => 'index#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

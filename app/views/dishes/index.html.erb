@@ -1,0 +1,34 @@
+<h1>菜单</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>菜名</th>
+    <th>价格</th>
+    <th>描述</th>
+    <th>今日菜品</th>
+    <th>操作</th>
+  </tr>
+
+<% @dishes.each do |dish| %>
+  <tr>
+    <td><%= dish.name %></td>
+    <td><%= dish.price %></td>
+    <td><%= dish.description %></td>
+    <td>
+      <% if dish.is_today %>
+          <%= link_to '取消', unset_is_today_path(dish) ,:class => 'btn btn-mini btn-danger'%>
+      <% else %>
+          <%= link_to '选定', set_is_today_path(dish), :class => 'btn btn-mini'%>
+      <% end %>
+    </td>
+    <td><%= link_to '编辑', edit_dish_path(dish) ,:class => 'btn btn-mini'%>
+        <%= link_to '删除', dish, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<div class="form-actions">
+  <%= link_to '新增菜品', new_dish_path, :class => 'btn btn-primary'%>
+</div>

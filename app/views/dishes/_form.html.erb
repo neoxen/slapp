@@ -1,0 +1,53 @@
+<%= form_for @dish , :html =>{:class => 'form-horizontal'} do |f| %>
+  <% if @dish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+
+      <ul>
+      <% @dish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <fieldset>
+  <div class="control-group">
+    <%= f.label :name ,:class => 'control-label'%>
+    <div class="controls">
+    <%= f.text_field :name ,:class => 'text_field'%>
+      </div>
+  </div>
+  <div class="field">
+    <%= f.label :price , :class => 'control-label' %>
+    <div class="controls">
+    <%= f.number_field :price ,:class => 'number_field'%>
+      </div>
+  </div>
+  <div class="field">
+    <%= f.label :description , :class => 'control-label' %>
+    <div class="controls">
+    <%= f.text_field :description ,:class => 'text_field' %>
+      </div>
+  </div>
+  <div class="field">
+    <%= f.label :remark , :class => 'control-label'  %>
+    <div class="controls">
+    <%= f.text_field :remark ,:class => 'text_field'%>
+      </div>
+  </div>
+  <div class="field">
+    <%= f.label :is_today , :class => 'control-label'  %>
+    <div class="controls">
+    <%= f.check_box :is_today ,:class => 'check_box'%>
+      </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '确定', :class => 'btn btn-primary'%>
+    <%= link_to '取消', dishes_path, :class => 'btn' %>
+  </div>
+ </fieldset>
+
+
+
+<% end %>
