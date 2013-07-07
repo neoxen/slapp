@@ -21,3 +21,4 @@ zh-CN:
       signin: "登录"
       signout: "退出"
       current_signin: "当前用户："
+      changepassword: "修改密码"

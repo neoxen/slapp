@@ -21,3 +21,4 @@ en:
       signin: "Sign In"
       signout: "Sign Out"
       current_signin: "Signed in as "
+      changepassword: "Change password"

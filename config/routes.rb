@@ -1,6 +1,10 @@
 Slapp::Application.routes.draw do
 
 
+  get 'user/:id/account/create',to: 'account#create', as: 'create_account'
+  get 'user/:id/account/show', to: 'account#show', as: 'show_account'
+  get 'user/:id/account/add', to: 'account#add', as: 'add_account'
+
   get '/dishes/:id/set', to: 'dishes#set_is_today', as: 'set_is_today'
   get '/dishes/:id/unset', to: 'dishes#unset_is_today', as: 'unset_is_today'
 
