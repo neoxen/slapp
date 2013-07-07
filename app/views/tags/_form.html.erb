@@ -1,10 +1,10 @@
 <%= form.fields_for :tags do |tag_form| %>
   <div class="control-group">
-    <%= tag_form.label :name, 'Tag:' ,:class => 'control-label' %>
+    <%= tag_form.label :name, '关键字' ,:class => 'control-label' %>
     <div class="controls">
       <%= tag_form.text_field :name ,:class => 'text_field'%>
       <% unless tag_form.object.nil? || tag_form.object.new_record? %>
-      <small>remove?</small>
+      <small>删除？</small>
       <%= tag_form.check_box :_destroy ,:class => 'check_box'%>   
     <% end %>
   </div>

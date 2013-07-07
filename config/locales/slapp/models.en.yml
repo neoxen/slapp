@@ -2,6 +2,8 @@ en:
   activerecord:
     models:
       user: "User"
+      post: "Post"
+      tag: "Tag"
     attributes:
       user:
         username: "Username"
@@ -10,3 +12,9 @@ en:
         password_confirmation: "Password confirmation"
         current_password: "Current password"
         remember_me: "Remember me"
+      post:
+        name: "Name"
+        title: "Title"
+        content: "Content"
+      tag:
+        name: "Tag name"

@@ -1,15 +1,11 @@
 <dl class="dl-horizontal">
-  <dt>Name</dt>
+  <dt>部门</dt>
   <dd><%= @post.name %></dd>
-  <dt>Title</dt>
+  <dt>标题</dt>
   <dd><%= @post.title %></dd>
-  <dt>Content</dt>
+  <dt>内容</dt>
   <dd><%= @post.content %></dd>
-  <dt>Tags</dt>
-  <dd>
-    <%= join_tags(@post) %>
-  </dd>
-  <dt>Comments</dt>
+  <dt>评论</dt>
   <dd>
     <%= render @post.comments %>    
   </dd>
@@ -18,7 +14,7 @@
 
 <%= form_for [@post, @post.comments.build] , :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
-    <legend>Add a comment</legend>
+    <legend>评论</legend>
   <div class="control-group">
     <%= f.label :commenter , :class => 'control-label' %>
     <div class="controls">
@@ -32,9 +28,9 @@
   </div>
   </div>
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to 'Edit Post', edit_post_path(@post) , :class => 'btn' %> 
-    <%= link_to 'Back', posts_path , :class => 'btn' %>
+    <%= f.submit '评论', :class => 'btn btn-primary' %>
+    <%= link_to '修改通知', edit_post_path(@post) , :class => 'btn' %> 
+    <%= link_to '返回', posts_path , :class => 'btn' %>
   </div>
   </fieldset>
 <% end %>

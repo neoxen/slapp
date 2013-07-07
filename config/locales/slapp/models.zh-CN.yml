@@ -2,6 +2,8 @@ zh-CN:
   activerecord:
     models:
       user: "用户"
+      post: "通知"
+      tag: "标签"
     attributes:
       user:
         username: "用户名"
@@ -10,3 +12,9 @@ zh-CN:
         password_confirmation: "密码确认"
         current_password: "当前密码"
         remember_me: "记录登录信息"
+      post:
+        name: "部门"
+        title: "标题"
+        content: "内容"
+      tag:
+        name: "关键字"
