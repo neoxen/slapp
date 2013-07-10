@@ -1,17 +1,40 @@
 <%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+    <% if @order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <fieldset>
+      <legend>订餐记录</legend>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="control-group">
+        <%= post_form.label :dish_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= post_form.text_field :dishname, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= post_form.label :dish_price, :class => 'control-label' %>
+        <div class="controls">
+          <%= post_form.text_field :dish_price, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= post_form.label :order_date, :class => 'control-label' %>
+        <div class="controls">
+          <%= post_form.text_field :order_date, :class => 'text_field' %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= post_form.submit nil, :class => 'btn btn-primary' %>
+        <%= link_to '返回', root_path, :class => 'btn' %>
+      </div>
+    </fieldset>
 <% end %>
