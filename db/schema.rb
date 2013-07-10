@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703152727) do
+ActiveRecord::Schema.define(:version => 20130709091826) do
 
   create_table "accounts", :force => true do |t|
     t.decimal  "amount"
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(:version => 20130703152727) do
     t.boolean  "is_today"
     t.date     "set_date"
   end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.date     "order_date"
+    t.string   "dish_name"
+    t.decimal  "dish_price"
+    t.string   "remark"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "orders", ["user_id", "order_date"], :name => "index_orders_on_user_id_and_order_date"
 
   create_table "posts", :force => true do |t|
     t.string   "name"

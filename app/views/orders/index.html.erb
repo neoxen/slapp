@@ -1,0 +1,26 @@
+<h1>点菜记录</h1>
+
+<table>
+  <tr>
+    <th>日期</th>
+    <th>菜品</th>
+    <th>价格</th>
+    <th>操作</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.order_date %></td>
+    <td><%= order.dish_name %></td>
+    <td><%= order.dish_price %></td>
+    <td>
+      <%= link_to 'Show', order %>
+      <%= link_to 'Edit', edit_order_path(order) %>
+      <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>

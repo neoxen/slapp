@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  order_date: 2013-07-09
+  dish_name: MyString
+  dish_price: 9.99
+  remark: MyString
+
+two:
+  user_id: 1
+  order_date: 2013-07-09
+  dish_name: MyString
+  dish_price: 9.99
+  remark: MyString

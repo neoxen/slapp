@@ -1,6 +1,9 @@
 Slapp::Application.routes.draw do
 
 
+  resources :orders
+
+
   get 'user/:id/account/create',to: 'account#create', as: 'create_account'
   get 'user/:id/account/show', to: 'account#show', as: 'show_account'
   get 'user/:id/account/add', to: 'account#add', as: 'add_account'

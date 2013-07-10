@@ -3,33 +3,19 @@
     <div class="row-fluid">
       <div class="span6">
         <div class="well center">
-          <h2><%= t('global.menu.blog') %></h2>
+          <h2>最新通知公告</h2>
           <table class="table table-striped">
             <tr>
-              <th>部门</th>
-              <th>标题</th>
-              <th>内容</th>
+              <td style="text-align: center"><%= @last_post.title %></td>
+              <td style="text-align: right"><%= @last_post.created_at.strftime("%Y-%m-%d") %><td>
             </tr>
-
             <tr>
-              <td><%= @last_post.name %></td>
-              <td><%= @last_post.title %></td>
-              <td><%= @last_post.content %></td>
+              <td colspan="2"><%= @last_post.content %></td>
             </tr>
-
           </table>
-
-          <dl class="dl-horizontal">
-            <dt>部门</dt>
-            <dd><%= @last_post.name %></dd>
-            <dt>标题</dt>
-            <dd><%= @last_post.title %></dd>
-            <dt>内容</dt>
-            <dd><%= @last_post.content %></dd>
-          </dl>
           <p>
             <%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
-                <i class="icon-comment icon-black"></i>&nbsp;<%= t('global.menu.gosub') %>
+                <i class="icon-comment icon-black"></i>&nbsp;查看更多
             <% end %>
           </p>
         </div>

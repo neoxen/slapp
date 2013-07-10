@@ -10,10 +10,10 @@
 
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post , :class => 'btn btn-mini' %>
+    <td style="width: 10%;"><%= post.name %></td>
+    <td style="width: 10%;"><%= post.title %></td>
+    <td style="width: 60%;"><%= post.content %></td>
+    <td style="width: 20%;"><%= link_to 'Show', post , :class => 'btn btn-mini' %>
     <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
     <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete ,:class => 'btn btn-mini btn-danger'%>
     </td>
