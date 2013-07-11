@@ -35,7 +35,10 @@
                   <%= t('global.menu.current_signin') %><%= current_user.username %> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to t('global.menu.changepassword'), edit_registration_path(:user) %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to '查看今日订餐', list_today_path %></li>
                   <li><%= link_to '设置今日菜单', dishes_path %></li>
+                  <li><%= link_to '账户管理', accounts_path %></li>
                   <li class="divider"></li>
                   <li><%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
                 </ul>

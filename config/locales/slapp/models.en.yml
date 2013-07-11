@@ -4,6 +4,7 @@ en:
       user: "User"
       post: "Post"
       tag: "Tag"
+      account: "Account"
     attributes:
       user:
         username: "Username"
@@ -18,3 +19,6 @@ en:
         content: "Content"
       tag:
         name: "Tag name"
+      account:
+        amount: "Amount"
+        remark: "Remark"

@@ -17,4 +17,23 @@ class OrdersController < InheritedResources::Base
       format.json { render json: @orders }
     end
   end
+
+  def list
+
+    date = Time.now
+    date_today = date.strftime("%Y-%m-%d")
+
+    @orders = Order.find_all_by_order_date(date_today)
+
+
+    @total = 0
+    @orders.each do |order|
+       @total += order.dish_price
+    end
+
+    respond_to do |format|
+      format.html # list.html.erb
+      format.json { render json: @orders }
+    end
+  end
 end

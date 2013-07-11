@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="well">
+
+      <h2>订餐账户</h2>
+
+      <table class="table table-striped">
+        <tr>
+          <th>人员</th>
+          <th>余额</th>
+          <th>备注</th>
+          <th>操作</th>
+        </tr>
+
+        <% @accounts.each do |account| %>
+            <tr>
+              <td><%= account.user.username %></td>
+              <td><%= account.amount  %></td>
+              <td><%= account.remark %></td>
+              <td>
+                <%= link_to '充值', edit_account_path(account), :class => 'btn btn-mini' %>
+            </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>

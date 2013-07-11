@@ -15,7 +15,9 @@
     <td><%= dish.price %></td>
     <td><%= dish.description %></td>
     <td>
-      <% if dish.is_today %>
+      <% t = Time.now %>
+      <% date = t.strftime("%Y-%m-%d") %>
+      <% if ( dish.is_today && dish.set_date = date ) %>
           <%= link_to '取消', unset_is_today_path(dish) ,:class => 'btn btn-mini btn-danger'%>
       <% else %>
           <%= link_to '选定', set_is_today_path(dish), :class => 'btn btn-mini'%>

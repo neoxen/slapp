@@ -89,19 +89,19 @@ Devise.setup do |config|
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
-  # confirming his account. For instance, if set to 2.days, the user will be
-  # able to access the website for two days without confirming his account,
+  # confirming his accounts. For instance, if set to 2.days, the user will be
+  # able to access the website for two days without confirming his accounts,
   # access will be blocked just in the third day. Default is 0.days, meaning
-  # the user cannot access the website without confirming his account.
+  # the user cannot access the website without confirming his accounts.
   # config.allow_unconfirmed_access_for = 2.days
 
   # If true, requires any email changes to be confirmed (exctly the same way as
-  # initial account confirmation) to be applied. Requires additional unconfirmed_email
+  # initial accounts confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed new email is stored in
   # unconfirmed email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
 
-  # Defines which key will be used when confirming an account
+  # Defines which key will be used when confirming an accounts
   # config.confirmation_keys = [ :email ]
 
   # ==> Configuration for :rememberable
@@ -134,31 +134,31 @@ Devise.setup do |config|
   # config.timeout_in = 30.minutes
 
   # ==> Configuration for :lockable
-  # Defines which strategy will be used to lock an account.
-  # :failed_attempts = Locks an account after a number of failed attempts to sign in.
+  # Defines which strategy will be used to lock an accounts.
+  # :failed_attempts = Locks an accounts after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
   # config.lock_strategy = :failed_attempts
 
-  # Defines which key will be used when locking and unlocking an account
+  # Defines which key will be used when locking and unlocking an accounts
   # config.unlock_keys = [ :email ]
 
-  # Defines which strategy will be used to unlock an account.
+  # Defines which strategy will be used to unlock an accounts.
   # :email = Sends an unlock link to the user email
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
   # config.unlock_strategy = :both
 
-  # Number of authentication tries before locking an account if lock_strategy
+  # Number of authentication tries before locking an accounts if lock_strategy
   # is failed attempts.
   # config.maximum_attempts = 20
 
-  # Time interval to unlock the account if :time is enabled as unlock_strategy.
+  # Time interval to unlock the accounts if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
 
   # ==> Configuration for :recoverable
   #
-  # Defines which key will be used when recovering the password for an account
+  # Defines which key will be used when recovering the password for an accounts
   # config.reset_password_keys = [ :email ]
 
   # Time interval you can reset your password with a reset password key.

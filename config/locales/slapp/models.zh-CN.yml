@@ -4,6 +4,7 @@ zh-CN:
       user: "用户"
       post: "通知"
       tag: "标签"
+      account: "订餐账户"
     attributes:
       user:
         username: "用户名"
@@ -18,3 +19,6 @@ zh-CN:
         content: "内容"
       tag:
         name: "关键字"
+      account:
+        amount: "余额"
+        remark: "备注"
