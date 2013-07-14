@@ -17,10 +17,15 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
 
+    before_amount = @account.amount
+
     respond_to do |format|
       if @account.update_attributes(params[:account])
-        format.html { redirect_to accounts_path, notice: 'Recharging successfully!' }
-        format.json { head :no_content }
+        @account.amount += before_amount
+        if @account.save
+          format.html { redirect_to accounts_path, notice: 'Recharging successfully!' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @account.errors, status: :unprocessable_entity }

@@ -14,10 +14,9 @@
     <fieldset>
       <legend>账户充值：<%= @account.user.username %> | 当前余额：<%= @account.amount %></legend>
       <div class="control-group">
-        <%= account_form.label :amount, :class => 'control-label' %>
+        <span class="control-label">充值金额</span>
         <div class="controls">
-          <%= account_form.text_field :amount, :class => 'text_field' %>
-          <span class="label label-important">注意</span><span>余额框中应填写更新后的金额，如：当前余额50，充值100，此处填写150</span>
+          <%= account_form.text_field :amount, { :class => 'text_field', :value => '100'} %>
         </div>
       </div>
       <div class="control-group">
