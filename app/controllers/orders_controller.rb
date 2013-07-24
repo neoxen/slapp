@@ -2,6 +2,7 @@ class OrdersController < InheritedResources::Base
   def index
     @user = current_user
     @orders = @user.orders
+    @recharge_records = @user.recharges
 
     date = Time.now
     date_today = date.strftime("%Y-%m-%d")
@@ -15,6 +16,32 @@ class OrdersController < InheritedResources::Base
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
+    end
+  end
+
+  def dish_order
+    @dish = Dish.find(params[:id])
+
+    @user_order = Order.new()
+
+    @user_order.dish_name = @dish.name
+    @user_order.dish_price = @dish.price
+    @user_order.order_date = Time.now.strftime("%Y-%m-%d")
+
+    @user_order.user = current_user
+
+    user_account = current_user.account
+
+    respond_to do |format|
+      if @user_order.save
+        user_account.amount -= @dish.price
+        user_account.save
+        format.html { redirect_to orders_path, notice: 'Order successfully!' }
+        format.json { render json: @user_order }
+      else
+        format.html { render action: "index" }
+        format.json { render json: @user_order.errors, status: :unprocessable_entity }
+      end
     end
   end
 

@@ -1,7 +1,11 @@
 Slapp::Application.routes.draw do
 
+  resources :recharges
+
+
   resources :accounts
 
+  match '/dish_order/:id', to: 'orders#dish_order', as: 'dish_order'
   get '/orders/list', to: 'orders#list', as: 'list_today'
   #get '/accounts/list', to:'accounts#list', as: 'list_accounts'
   #get '/account/edit/:id',to: 'accounts#edit', as: 'edit_account'

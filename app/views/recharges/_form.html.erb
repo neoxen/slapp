@@ -1,0 +1,37 @@
+<%= form_for(@recharge) do |f| %>
+  <% if @recharge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recharge.errors.count, "error") %> prohibited this recharge from being saved:</h2>
+
+      <ul>
+      <% @recharge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recharge_date %><br />
+    <%= f.date_select :recharge_date %>
+  </div>
+  <div class="field">
+    <%= f.label :recharge_amount %><br />
+    <%= f.text_field :recharge_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br />
+    <%= f.text_field :remark %>
+  </div>
+  <div class="field">
+    <%= f.label :operator %><br />
+    <%= f.text_field :operator %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

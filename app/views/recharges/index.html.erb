@@ -1,0 +1,27 @@
+<h1>充值记录</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>充值时间</th>
+    <th>金额</th>
+    <th>用户</th>
+    <th>备注</th>
+    <th>操作人</th>
+    <th></th>
+
+  </tr>
+
+<% @recharges.each do |recharge| %>
+  <tr>
+    <td><%= recharge.recharge_date %></td>
+    <td><%= recharge.recharge_amount %></td>
+    <td><%= recharge.user.username %></td>
+    <td><%= recharge.remark %></td>
+    <td><%= recharge.operator %></td>
+    <td>
+        <%= link_to 'Edit', edit_recharge_path(recharge),:class => 'btn btn-mini' %>
+        <%= link_to 'Destroy', recharge, method: :delete, data: { confirm: 'Are you sure?' } ,:class => 'btn btn-mini btn-danger'%>
+    </td>
+  </tr>
+<% end %>
+</table>

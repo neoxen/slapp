@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Recharge date:</b>
+  <%= @recharge.recharge_date %>
+</p>
+
+<p>
+  <b>Recharge amount:</b>
+  <%= @recharge.recharge_amount %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @recharge.user_id %>
+</p>
+
+<p>
+  <b>Remark:</b>
+  <%= @recharge.remark %>
+</p>
+
+<p>
+  <b>Operator:</b>
+  <%= @recharge.operator %>
+</p>
+
+
+<%= link_to 'Edit', edit_recharge_path(@recharge) %> |
+<%= link_to 'Back', recharges_path %>

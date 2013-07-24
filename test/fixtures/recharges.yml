@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  recharge_date: 2013-07-15
+  recharge_amount: 9.99
+  user_id: 1
+  remark: MyString
+  operator: MyString
+
+two:
+  recharge_date: 2013-07-15
+  recharge_amount: 9.99
+  user_id: 1
+  remark: MyString
+  operator: MyString
