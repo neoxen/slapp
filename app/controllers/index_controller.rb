@@ -1,4 +1,5 @@
 class IndexController < ApplicationController
+  before_filter :authenticate_user!
   
   def index
     date = Time.now

@@ -1,4 +1,6 @@
 class OrdersController < InheritedResources::Base
+  before_filter :authenticate_user!
+
   def index
     @user = current_user
     @orders = @user.orders
