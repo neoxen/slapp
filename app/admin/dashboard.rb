@@ -30,4 +30,15 @@ ActiveAdmin.register_page "Dashboard" do
     #   end
     # end
   end # content
+
+  #ActiveAdmin::Dashboards.build do
+  #  section "Recent Orders" do
+  #    table_for Dish.all do
+  #      column :name
+  #      column :price
+  #    end
+  #    strong { link_to "View All Orders", orders_path }
+  #  end
+  #end
+
 end

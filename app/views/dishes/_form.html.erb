@@ -12,6 +12,12 @@
   <% end %>
 
  <fieldset>
+   <div class="control-group">
+     <%= f.label :restaurant_id ,:class => 'control-label'%>
+     <div class="controls">
+       <%= f.select :restaurant_id, Restaurant.all.collect {|c| [ c.name, c.id ] }, :class => 'select'%>
+     </div>
+   </div>
   <div class="control-group">
     <%= f.label :name ,:class => 'control-label'%>
     <div class="controls">

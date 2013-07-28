@@ -2,45 +2,66 @@
   <div class="span12">
     <div class="row-fluid">
       <div class="span6">
-        <div class="well center">
-          <h2>最新通知公告</h2>
-          <table class="table table-striped">
-            <tr>
-              <td style="text-align: center"><%= @last_post.title %></td>
-              <td style="text-align: right"><%= @last_post.created_at.strftime("%Y-%m-%d") %><td>
-            </tr>
-            <tr>
-              <td colspan="2"><%= @last_post.content %></td>
-            </tr>
-          </table>
-          <p>
-            <%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
-                <i class="icon-comment icon-black"></i>&nbsp;查看更多
-            <% end %>
-          </p>
+        <div class="display-section">
+          <h3>最新通知公告</h3>
+
+          <div class="display-section-contents">
+            <table class="table table-striped">
+              <tr>
+                <td style="text-align: center"><%= @last_post.title %></td>
+                <td style="text-align: right"><%= @last_post.created_at.strftime("%Y-%m-%d") %>
+                <td>
+              </tr>
+              <tr>
+                <td colspan="2"><%= @last_post.content %></td>
+              </tr>
+            </table>
+            <p>
+              <%= link_to posts_path, :class => 'btn btn-large btn-block' do %>
+                  <i class="icon-comment icon-black"></i>&nbsp;查看更多
+              <% end %>
+            </p>
+          </div>
         </div>
       </div>
       <div class="span6">
-        <div class="well center">
-          <h2>今日菜单</h2>
-          <table class="table table-striped">
-            <tr>
-              <th>菜名</th>
-              <th>价格</th>
-              <th>日期</th>
-              <th>操作</th>
-            </tr>
+        <div class="display-section">
+          <h3>今日菜单</h3>
 
-            <% @dishes_today.each do |dish| %>
-                <tr>
-                  <td><%= dish.name %></td>
-                  <td><%= dish.price %></td>
-                  <td><%= dish.set_date %></td>
-                  <td><%= link_to '选择', dish, :class => 'btn btn-mini' %>
-                  </td>
-                </tr>
-            <% end %>
-          </table>
+          <div class="display-section-contents">
+            <div class="tabbable">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">圆梦</a></li>
+                <li><a href="#tab2" data-toggle="tab">品客堂</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+
+                  <table class="table table-striped">
+                    <tr>
+                      <th>菜名</th>
+                      <th>价格</th>
+                      <th>日期</th>
+                      <th>操作</th>
+                    </tr>
+
+                    <% @dishes_today.each do |dish| %>
+                        <tr>
+                          <td><%= dish.name %></td>
+                          <td><%= dish.price %></td>
+                          <td><%= dish.set_date %></td>
+                          <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-mini' %>
+                          </td>
+                        </tr>
+                    <% end %>
+                  </table>
+                </div>
+                <div class="tab-pane" id="tab2">
+                  <p>Howdy, I'm in Section 2.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

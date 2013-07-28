@@ -1,26 +1,30 @@
-<h1>通知列表</h1>
+<div class="display-section">
+  <h3>通知列表</h3>
 
-<table class="table table-striped">
-  <tr>
-    <th>部门</th>
-    <th>标题</th>
-    <th>内容</th>
-    <th>操作</th>
-  </tr>
+  <div class="display-section-contents">
+    <table class="table table-striped">
+      <tr>
+        <th>部门</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>操作</th>
+      </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td style="width: 10%;"><%= post.name %></td>
-    <td style="width: 10%;"><%= post.title %></td>
-    <td style="width: 60%;"><%= post.content %></td>
-    <td style="width: 20%;"><%= link_to 'Show', post , :class => 'btn btn-mini' %>
-    <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
-    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete ,:class => 'btn btn-mini btn-danger'%>
-    </td>
-  </tr>
-<% end %>
-</table>
+      <% @posts.each do |post| %>
+          <tr>
+            <td style="width: 10%;"><%= post.name %></td>
+            <td style="width: 10%;"><%= post.title %></td>
+            <td style="width: 60%;"><%= post.content %></td>
+            <td style="width: 20%;"><%= link_to 'Show', post, :class => 'btn btn-mini' %>
+              <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
+              <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
 
-<div class="form-actions">
-  <%= link_to '发布通知', new_post_path, :class => 'btn btn-primary'%>
+    <div class="form-actions">
+      <%= link_to '发布通知', new_post_path, :class => 'btn btn-primary' %>
+    </div>
+  </div>
 </div>

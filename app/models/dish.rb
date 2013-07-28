@@ -1,3 +1,4 @@
 class Dish < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :remark, :is_today, :set_date
+  belongs_to :restaurant
+  attr_accessible :restaurant_id, :description, :name, :price, :remark, :is_today, :set_date
 end

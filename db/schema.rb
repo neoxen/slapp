@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715151953) do
+ActiveRecord::Schema.define(:version => 20130727073409) do
 
   create_table "accounts", :force => true do |t|
     t.decimal  "amount"
@@ -71,10 +71,11 @@ ActiveRecord::Schema.define(:version => 20130715151953) do
     t.integer  "price"
     t.string   "description"
     t.string   "remark"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.boolean  "is_today"
     t.date     "set_date"
+    t.integer  "restaurant_id"
   end
 
   create_table "orders", :force => true do |t|
@@ -83,8 +84,9 @@ ActiveRecord::Schema.define(:version => 20130715151953) do
     t.string   "dish_name"
     t.decimal  "dish_price"
     t.string   "remark"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "restaurant_id"
   end
 
   add_index "orders", ["user_id", "order_date"], :name => "index_orders_on_user_id_and_order_date"
@@ -105,6 +107,15 @@ ActiveRecord::Schema.define(:version => 20130715151953) do
     t.string   "operator"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "restaurants", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "remark"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|

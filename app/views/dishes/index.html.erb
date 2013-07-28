@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <tr>
     <th>菜名</th>
+    <th>餐馆</th>
     <th>价格</th>
     <th>描述</th>
     <th>今日菜品</th>
@@ -12,6 +13,7 @@
 <% @dishes.each do |dish| %>
   <tr>
     <td><%= dish.name %></td>
+    <td><%= dish.restaurant.name %></td>
     <td><%= dish.price %></td>
     <td><%= dish.description %></td>
     <td>

@@ -29,6 +29,7 @@ class OrdersController < InheritedResources::Base
     @user_order.dish_name = @dish.name
     @user_order.dish_price = @dish.price
     @user_order.order_date = Time.now.strftime("%Y-%m-%d")
+    @user_order.restaurant = @dish.restaurant
 
     @user_order.user = current_user
 
