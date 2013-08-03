@@ -1,4 +1,6 @@
 class DishesController < InheritedResources::Base
+  before_filter :authorize_admin!, :except => [:index, :show]
+
   def set_is_today
     @dish = Dish.find(params[:id])
 

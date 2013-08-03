@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_filter :authorize_admin!, :except => [:index, :show]
+
   def create
   end
 
