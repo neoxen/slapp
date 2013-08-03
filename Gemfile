@@ -3,6 +3,8 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass'
 
+gem 'kaminari'
+
 gem 'devise'
 gem 'activeadmin'
 
