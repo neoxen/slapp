@@ -8,7 +8,7 @@ zh-CN:
         truncate: "..."
   global:
     application:
-      name: "武汉智慧城市研究院内部交流系统"
+      name: "智慧点餐系统"
     menu:
       home: "首页"
       blog: "通知公告"
