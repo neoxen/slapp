@@ -38,8 +38,10 @@
             </tr>
         <% end %>
         <tr>
-          <td colspan="3">合计</td>
-          <td colspan="2"><%= @total %></td>
+          <td></td>
+          <td><span class="label label-success">合计</span></td>
+          <td><span class="label badge-success"><%= @orders.count %>份</span></td>
+          <td colspan="2"><span class="label badge-success"><%= @total %>元</span></td>
         </tr>
       </table>
       </div>

@@ -59,7 +59,7 @@ class OrdersController < InheritedResources::Base
       date_today = Date.civil(params[:orders_date][:year].to_i, params[:orders_date][:month].to_i, params[:orders_date][:day].to_i)
     end
 
-    @orders = Order.find_all_by_order_date(date_today)
+    @orders = Order.find_all_by_order_date(date_today, :order => 'dish_name DESC')
 
 
     @total = 0
