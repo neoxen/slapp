@@ -1,5 +1,6 @@
 class OrdersController < InheritedResources::Base
   before_filter :authenticate_user!
+  before_filter :authorize_admin!, :only => [:delete, :update]
 
   def index
     @user = current_user
@@ -51,7 +52,12 @@ class OrdersController < InheritedResources::Base
   def list
 
     date = Time.now
-    date_today = date.strftime("%Y-%m-%d")
+
+    if params[:orders_date].nil?
+      date_today = date.strftime("%Y-%m-%d")
+    else
+      date_today = Date.civil(params[:orders_date][:year].to_i, params[:orders_date][:month].to_i, params[:orders_date][:day].to_i)
+    end
 
     @orders = Order.find_all_by_order_date(date_today)
 

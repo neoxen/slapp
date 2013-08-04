@@ -4,13 +4,23 @@
 
       <h3>订餐记录</h3>
       <div class="display-section-contents">
+
+
+        <form class="form-search">
+          <%= select_date Date.today, prefix: :orders_date %>
+          <button type="submit" class="btn">查看</button>
+        </form>
+
+
       <table class="table table-striped">
         <tr>
           <th>日期</th>
           <th>人员</th>
           <th>菜品</th>
           <th>价格</th>
-          <th>操作</th>
+          <%= admins_only do %>
+              <th>操作</th>
+          <% end %>
         </tr>
 
         <% @orders.each do |order| %>
@@ -19,10 +29,12 @@
               <td><%= order.user.username %></td>
               <td><%= order.dish_name %></td>
               <td><%= order.dish_price %></td>
-              <td>
-                <%= link_to 'Show', order, :class => 'btn btn-mini' %>
-                <%= link_to 'Edit', edit_order_path(order), :class => 'btn btn-mini' %>
-                <%= link_to 'Destroy', order, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+              <%= admins_only do %>
+                  <td>
+                    <%= link_to '修改', edit_order_path(order), :class => 'btn btn-mini' %>
+                    <%= link_to '删除', order, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+                  </td>
+              <% end %>
             </tr>
         <% end %>
         <tr>

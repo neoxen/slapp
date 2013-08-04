@@ -1,29 +1,34 @@
-<h1>Listing restaurants</h1>
+<div class="display-section">
+  <h3>餐馆列表</h3>
+  <div class="display-section-contents">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Remark</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @restaurants.each do |restaurant| %>
-  <tr>
-    <td><%= restaurant.name %></td>
-    <td><%= restaurant.address %></td>
-    <td><%= restaurant.phone %></td>
-    <td><%= restaurant.remark %></td>
-    <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <table class="table table-striped">
+      <tr>
+        <th>名称</th>
+        <th>地址</th>
+        <th>电话</th>
+        <th>备注</th>
+        <th>操作</th>
+      </tr>
 
-<br />
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+      <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.address %></td>
+            <td><%= restaurant.phone %></td>
+            <td><%= restaurant.remark %></td>
+            <td>
+              <%= link_to '修改', edit_restaurant_path(restaurant), :class => 'btn btn-mini' %>
+              <%= link_to '删除', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+    <%= admins_only do %>
+        <div class="form-actions">
+          <%= link_to '新建餐馆', new_restaurant_path, :class => 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
+</div>

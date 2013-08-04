@@ -23,7 +23,7 @@
           <%= link_to '选定', set_is_today_path(dish), :class => 'btn btn-mini'%>
       <% end %>
     </td>
-    <td><%= link_to '编辑', edit_dish_path(dish) ,:class => 'btn btn-mini'%>
+    <td><%= link_to '修改', edit_dish_path(dish) ,:class => 'btn btn-mini'%>
         <%= link_to '删除', dish, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-mini btn-danger' %></td>
   </tr>
 <% end %>

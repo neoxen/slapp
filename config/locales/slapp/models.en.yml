@@ -5,6 +5,9 @@ en:
       post: "Post"
       tag: "Tag"
       account: "Account"
+      dish: "Dish"
+      restaurant: "Restaurant"
+      order: "Order"
     attributes:
       user:
         username: "Username"
@@ -22,3 +25,19 @@ en:
       account:
         amount: "Amount"
         remark: "Remark"
+      restaurant:
+        name: "Name"
+        address: "Address"
+        phone: "Phone"
+        remark: "Remark"
+      dish:
+        restaurant_id: "Restaurant"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        remark: "Remark"
+        is_today: "For today?"
+      order:
+        dish_name: "Dish name"
+        dish_price: "Dish price"
+        order_date: "Order date"

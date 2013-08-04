@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>名称:</b>
   <%= @restaurant.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>地址:</b>
   <%= @restaurant.address %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b>电话:</b>
   <%= @restaurant.phone %>
 </p>
 
 <p>
-  <b>Remark:</b>
+  <b>备注:</b>
   <%= @restaurant.remark %>
 </p>
 
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to '修改', edit_restaurant_path(@restaurant) %> |
+<%= link_to '返回', restaurants_path %>

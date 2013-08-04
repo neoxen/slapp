@@ -5,6 +5,9 @@ zh-CN:
       post: "通知"
       tag: "标签"
       account: "订餐账户"
+      dish: "菜单"
+      restaurant: "餐馆"
+      order: "订餐记录"
     attributes:
       user:
         username: "用户名"
@@ -22,3 +25,19 @@ zh-CN:
       account:
         amount: "余额"
         remark: "备注"
+      restaurant:
+        name: "名称"
+        address: "地址"
+        phone: "电话"
+        remark: "备注"
+      dish:
+        restaurant_id: "餐馆"
+        name: "菜名"
+        price: "价格"
+        description: "描述"
+        remark: "备注"
+        is_today: "今日菜品？"
+      order:
+        dish_name: "菜名"
+        dish_price: "价格"
+        order_date: "订餐日期"

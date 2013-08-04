@@ -37,9 +37,12 @@
                   <li><%= link_to t('global.menu.changepassword'), edit_registration_path(:user) %></li>
                   <li class="divider"></li>
                   <li><%= link_to '查看今日订餐', list_today_path %></li>
-                  <li><%= link_to '设置今日菜单', dishes_path %></li>
-                  <li><%= link_to '账户管理', accounts_path %></li>
-                  <li><%= link_to '充值记录', recharges_path %></li>
+                  <%= admins_only do %>
+                      <li><%= link_to '设置今日菜单', dishes_path %></li>
+                      <li><%= link_to '账户管理', accounts_path %></li>
+                      <li><%= link_to '充值记录', recharges_path %></li>
+                      <li><%= link_to '餐馆列表', restaurants_path %></li>
+                  <% end %>
                   <li class="divider"></li>
                   <li><%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
                 </ul>
@@ -72,6 +75,7 @@
     </div>
   </div>
   <footer class="footer">
+    <p class="pull-left">智慧点餐系统 V1.0</p>
     <p class="pull-right">&copy; 2013 <a target="_blank" href="http://www.wrisc.cn">wrisc.cn</a></p>
   </footer>
 </div>

@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<dl class="dl-horizontal">
+  <dt>人员</dt>
+  <dd><%= @order.user.username %></dd>
+  <dt>菜名</dt>
+  <dd><%= @order.dish_name %></dd>
+  <dt>价格</dt>
+  <dd><%= @order.dish_price %></dd>
+  <dt>日期</dt>
+  <dd><%= @order.order_date %></dd>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+</dl>
+
+<%= link_to '再次修改', edit_order_path(@order) %> |
+<%= link_to '返回', orders_path %>
