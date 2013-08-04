@@ -67,6 +67,7 @@
           <h3>订餐记录</h3>
 
           <div class="display-section-contents">
+            <%= paginate @orders %>
             <table class="table table-striped">
               <tr>
                 <th>日期</th>
@@ -91,6 +92,7 @@
           <h3>充值记录</h3>
 
           <div class="display-section-contents">
+            <%= paginate @recharge_records %>
             <table class="table table-striped">
               <tr>
                 <th>日期</th>
