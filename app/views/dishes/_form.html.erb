@@ -42,12 +42,6 @@
     <%= f.text_field :remark ,:class => 'text_field'%>
       </div>
   </div>
-  <div class="field">
-    <%= f.label :is_today , :class => 'control-label'  %>
-    <div class="controls">
-    <%= f.check_box :is_today ,:class => 'check_box'%>
-      </div>
-  </div>
   <div class="form-actions">
     <%= f.submit '确定', :class => 'btn btn-primary'%>
     <%= link_to '取消', dishes_path, :class => 'btn' %>
