@@ -22,6 +22,11 @@
                   <%= link_to '充值', edit_account_path(account), :class => 'btn btn-mini' %>
               </tr>
           <% end %>
+          <tr>
+            <td><span class="label label-success">余额总计</span></td>
+            <td><span class="label badge-success"><%= @total %>元</span></td>
+            <td colspan="2"></td>
+          </tr>
         </table>
       </div>
     </div>

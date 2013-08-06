@@ -6,6 +6,11 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
+
+    @total = 0
+    @accounts.each do |account|
+      @total += account.amount
+    end
   end
 
   def show
