@@ -72,4 +72,19 @@ class OrdersController < InheritedResources::Base
       format.json { render json: @orders }
     end
   end
+
+  # DELETE /orders/1
+  # DELETE /orders/1.json
+  def destroy
+    @order = Order.find(params[:id])
+    account = @order.user.account
+    account.amount += @order.dish_price
+    account.save
+    @order.destroy
+
+    respond_to do |format|
+      format.html { redirect_to list_today_path , notice: 'Order deleted successfully!'}
+      format.json { head :no_content }
+    end
+  end
 end
