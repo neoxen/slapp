@@ -8,7 +8,6 @@
     <th>用户</th>
     <th>备注</th>
     <th>操作人</th>
-    <th></th>
 
   </tr>
 
@@ -19,10 +18,6 @@
     <td><%= recharge.user.username %></td>
     <td><%= recharge.remark %></td>
     <td><%= recharge.operator %></td>
-    <td>
-        <%= link_to 'Edit', edit_recharge_path(recharge),:class => 'btn btn-mini' %>
-        <%= link_to 'Destroy', recharge, method: :delete, data: { confirm: 'Are you sure?' } ,:class => 'btn btn-mini btn-danger'%>
-    </td>
   </tr>
 <% end %>
 </table>
