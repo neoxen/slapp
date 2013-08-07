@@ -22,3 +22,7 @@ zh-CN:
       signout: "退出"
       current_signin: "当前用户："
       changepassword: "修改密码"
+    order:
+      info1: "您已成功预定"
+      info2: "，价格"
+      info3: "元！"
