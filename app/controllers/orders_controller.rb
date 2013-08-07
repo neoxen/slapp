@@ -4,8 +4,8 @@ class OrdersController < InheritedResources::Base
 
   def index
     @user = current_user
-    @orders = @user.orders.page(params[:page]).per(10)
-    @recharge_records = @user.recharges.page(params[:page]).per(10)
+    @orders = @user.orders.order('order_date DESC').page(params[:page]).per(10)
+    @recharge_records = @user.recharges.order('recharge_date DESC').page(params[:page]).per(10)
 
     date = Time.now
     date_today = date.strftime("%Y-%m-%d")
