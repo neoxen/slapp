@@ -1,8 +1,8 @@
-$navbarHeight: 40px;
-$navbarBackground: white;
+//$navbarHeight: 40px;
+//$navbarBackground: white;
 
 @import "bootstrap";
-@import "bootstrap-responsive";
+//@import "bootstrap-responsive";
 
 /* universal */
 
@@ -11,8 +11,21 @@ html {
   overflow-y: scroll;
 }
 
+.navbar-nav {
+  float: left;
+  margin-top: 10px;
+}
+
+.bs-docs-nav {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  border-top: 4px solid #68a639;
+  border-bottom: 1px solid rgba(0,0,0,.25);
+}
+
 body {
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 div.nav-collapse {

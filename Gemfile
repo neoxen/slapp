@@ -7,6 +7,7 @@ gem 'kaminari'
 
 gem 'devise'
 gem 'activeadmin'
+#gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 
 gem "meta_search",    '>= 1.1.0.pre'
 

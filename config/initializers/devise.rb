@@ -6,6 +6,8 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "neoxen@qq.com"
 
+  config.secret_key = '1dd4e169bce00b555ce74ab8bb9fcc2584eb4fd522829c41a0d747cead9710755f84bd456adb53b77845bf40d414b4a9b0d949c3c45144afb8e1ef392547202c'
+
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
