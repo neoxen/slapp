@@ -3,32 +3,34 @@
 
     <fieldset>
       <legend><%= t('global.menu.signup') %></legend>
-      <div class="control-group">
-        <%= f.label :username, :class => 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :username, :class => 'text_field' %> <span class='label label-important'>请使用＊汉字＊真实姓名</span>
+      <div class="form-group">
+        <%= f.label :username, :class => 'col-sm-2 control-label' %>
+        <div class="col-xs-4">
+          <%= f.text_field :username, :class => 'text_field' ,:required => 'required' %> <span class='label label-info'>请使用＊汉字＊真实姓名</span>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :email, :class => 'control-label' %>
-        <div class="controls">
-          <%= f.email_field :email, :class => 'text_field' %>
+      <div class="form-group">
+        <%= f.label :email, :class => 'col-sm-2 control-label' %>
+        <div class="col-xs-4">
+          <%= f.email_field :email, :class => 'text_field' ,:required => 'required' %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :password, :class => 'control-label' %>
-        <div class="controls">
-          <%= f.password_field :password, :class => 'text_field' %> <span class='label label-info'>密码注册后也可更改</span>
+      <div class="form-group">
+        <%= f.label :password, :class => 'col-sm-2 control-label' %>
+        <div class="col-xs-4">
+          <%= f.password_field :password, :class => 'text_field' ,:required => 'required' %> <span class='label label-info'>密码注册后也可更改</span>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :password_confirmation, :class => 'control-label' %>
-        <div class="controls">
-          <%= f.password_field :password_confirmation, :class => 'text_field' %>
+      <div class="form-group">
+        <%= f.label :password_confirmation, :class => 'col-sm-2 control-label' %>
+        <div class="col-xs-4">
+          <%= f.password_field :password_confirmation, :class => 'text_field' ,:required => 'required' %>
         </div>
       </div>
-      <div class="form-actions">
-        <%= f.submit t('global.menu.signup'), :class => 'btn btn-primary' %>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit t('global.menu.signup'), :class => 'btn btn-success' %>
+        </div>
       </div>
     </fieldset>
 <% end %>
