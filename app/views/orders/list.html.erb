@@ -1,16 +1,16 @@
-<div class="row-fluid">
-  <div class="span12">
-    <div class="display-section">
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
 
-      <h3>订餐记录</h3>
-      <div class="display-section-contents">
+      <div class="panel-heading">订餐记录</div>
+      <div class="panel-body">
 
 
         <form class="form-search">
           <%= select_date Date.today, prefix: :orders_date %>
           <button type="submit" class="btn btn-primary">查看</button>
         </form>
-
+      </div>
 
       <table class="table table-striped">
         <tr>
@@ -43,7 +43,6 @@
           <td colspan="2"><span class="label badge-success"><%= @total %>元</span></td>
         </tr>
       </table>
-      </div>
     </div>
   </div>
 </div>
