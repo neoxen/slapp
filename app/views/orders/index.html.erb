@@ -43,7 +43,7 @@
       <div class="col-md-6">
         <div class="panel panel-success">
           <div class="panel-heading">订餐记录</div>
-          <%= paginate @orders %>
+          <div class="panel-body"><%= paginate @orders %></div>
           <table class="table table-striped table-bordered">
             <tr>
               <th>日期</th>
@@ -65,8 +65,7 @@
       <div class="col-md-6">
         <div class="panel panel-success">
           <div class="panel-heading">充值记录</div>
-
-          <%= paginate @recharge_records %>
+          <div class="panel-body"><%= paginate @recharge_records %></div>
           <table class="table table-striped table-bordered">
             <tr>
               <th>日期</th>
