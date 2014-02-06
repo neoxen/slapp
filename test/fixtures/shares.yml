@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  sharing_date: 2014-02-06
+  sharing_content: MyString
+  sum_graded: 1
+  total_grade: 1
+  remark: MyString
+
+two:
+  user_id: 1
+  sharing_date: 2014-02-06
+  sharing_content: MyString
+  sum_graded: 1
+  total_grade: 1
+  remark: MyString

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803070604) do
+ActiveRecord::Schema.define(:version => 20140206153844) do
 
   create_table "accounts", :force => true do |t|
-    t.decimal  "amount"
+    t.decimal  "amount",     :precision => 10, :scale => 0
     t.string   "remark"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "user_id"
   end
 
@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(:version => 20130803070604) do
     t.integer  "user_id"
     t.date     "order_date"
     t.string   "dish_name"
-    t.decimal  "dish_price"
+    t.decimal  "dish_price",    :precision => 10, :scale => 0
     t.string   "remark"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.integer  "restaurant_id"
   end
 
@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(:version => 20130803070604) do
 
   create_table "recharges", :force => true do |t|
     t.date     "recharge_date"
-    t.decimal  "recharge_amount"
+    t.decimal  "recharge_amount", :precision => 10, :scale => 0
     t.integer  "user_id"
     t.string   "remark"
     t.string   "operator"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "restaurants", :force => true do |t|
@@ -116,6 +116,17 @@ ActiveRecord::Schema.define(:version => 20130803070604) do
     t.string   "remark"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "shares", :force => true do |t|
+    t.integer  "user_id"
+    t.date     "sharing_date"
+    t.string   "sharing_content"
+    t.integer  "sum_graded"
+    t.integer  "total_grade"
+    t.string   "remark"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -142,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20130803070604) do
     t.datetime "updated_at",                                :null => false
     t.string   "username"
     t.boolean  "admin",                  :default => false
+    t.boolean  "is_sharer",              :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
