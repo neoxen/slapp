@@ -1,5 +1,9 @@
 Slapp::Application.routes.draw do
 
+  get '/users/:id/set', to: 'users#set_is_sharer', as: 'set_is_sharer'
+  get '/users/:id/unset', to: 'users#unset_is_sharer', as: 'unset_is_sharer'
+  get '/shares/choose', to: 'shares#choose', as: 'sharer_choose'
+
   resources :shares
 
 

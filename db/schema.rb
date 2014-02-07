@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206153844) do
+ActiveRecord::Schema.define(:version => 20140207152050) do
 
   create_table "accounts", :force => true do |t|
     t.decimal  "amount",     :precision => 10, :scale => 0
@@ -125,8 +125,9 @@ ActiveRecord::Schema.define(:version => 20140206153844) do
     t.integer  "sum_graded"
     t.integer  "total_grade"
     t.string   "remark"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "is_archived",     :default => false
   end
 
   create_table "tags", :force => true do |t|

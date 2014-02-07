@@ -1,0 +1,24 @@
+<div class="panel panel-success">
+  <div class="panel-heading">晨会分享人员</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>人员</th>
+      <th>是否主持晨会</th>
+    </tr>
+
+    <% @users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+
+          <td>
+            <% if  user.is_sharer %>
+                <%= link_to '取消', unset_is_sharer_path(user), :class => 'btn btn-xs btn-danger' %>
+            <% else %>
+                <%= link_to '选定', set_is_sharer_path(user), :class => 'btn btn-xs btn-success' %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
