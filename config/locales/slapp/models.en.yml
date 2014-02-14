@@ -8,6 +8,7 @@ en:
       dish: "Dish"
       restaurant: "Restaurant"
       order: "Order"
+      share: "Morning Sharing"
     attributes:
       user:
         username: "Username"
@@ -41,3 +42,11 @@ en:
         dish_name: "Dish name"
         dish_price: "Dish price"
         order_date: "Order date"
+      share:
+        remark: "Remark"
+        sharing_content: "Sharing content"
+        sharing_date: "Sharing date"
+        sum_graded: "Average points"
+        total_grade: "Number graded"
+        user_id: "User"
+        is_archived: "Archived"

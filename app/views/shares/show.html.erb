@@ -1,35 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @share.user_id %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
 
-<p>
-  <b>Sharing date:</b>
-  <%= @share.sharing_date %>
-</p>
+      <div class="panel-heading">设定晨会分享</div>
+      <div class="panel-body">
+        <p>
+          <b>用户:</b>
+          <%= @share.user.username %>
+        </p>
 
-<p>
-  <b>Sharing content:</b>
-  <%= @share.sharing_content %>
-</p>
+        <p>
+          <b>分享日期:</b>
+          <%= @share.sharing_date %>
+        </p>
 
-<p>
-  <b>Sum graded:</b>
-  <%= @share.sum_graded %>
-</p>
+        <p>
+          <b>分享内容:</b>
+          <%= @share.sharing_content %>
+        </p>
 
-<p>
-  <b>Total grade:</b>
-  <%= @share.total_grade %>
-</p>
+        <p>
+          <b>平均得分:</b>
+          <%= @share.sum_graded %>
+        </p>
 
-<p>
-  <b>Remark:</b>
-  <%= @share.remark %>
-</p>
+        <p>
+          <b>评分人数:</b>
+          <%= @share.total_grade %>
+        </p>
+
+        <p>
+          <b>是否已存档:</b>
+          <%= @share.is_archived %>
+        </p>
 
 
-<%= link_to 'Edit', edit_share_path(@share) %> |
-<%= link_to 'Back', shares_path %>
+        <%= link_to '返回', shares_path, :class => 'btn btn-xs btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

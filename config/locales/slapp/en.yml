@@ -23,3 +23,14 @@ en:
       signout: "Sign Out"
       current_signin: "Signed in as "
       changepassword: "Change password"
+    order:
+      info1: "You have ordered "
+      info2: ". It costs you "
+      info3: " Yuan!"
+    share:
+      info:
+        voted1: "You have voted for "
+        voted2: " ! Thanks!"
+      error:
+        voted: "You have voted! DO NOT vote again!"
+        archived: "You can NOT vote when it has been archived!"

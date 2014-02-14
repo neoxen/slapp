@@ -8,6 +8,7 @@ zh-CN:
       dish: "菜单"
       restaurant: "餐馆"
       order: "订餐记录"
+      share: "晨会分享"
     attributes:
       user:
         username: "用户名"
@@ -41,3 +42,11 @@ zh-CN:
         dish_name: "菜名"
         dish_price: "价格"
         order_date: "订餐日期"
+      share:
+        remark: "备注"
+        sharing_content: "分享内容"
+        sharing_date: "分享日期"
+        sum_graded: "平均得分"
+        total_grade: "评分人数"
+        user_id: "用户"
+        is_archived: "已存档"

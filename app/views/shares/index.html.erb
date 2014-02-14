@@ -1,33 +1,97 @@
-<h1>Listing shares</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Sharing date</th>
-    <th>Sharing content</th>
-    <th>Sum graded</th>
-    <th>Total grade</th>
-    <th>Remark</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <div class="panel-heading">晨会分享</div>
+      <div class="panel-body">
 
-<% @shares.each do |share| %>
-  <tr>
-    <td><%= share.user_id %></td>
-    <td><%= share.sharing_date %></td>
-    <td><%= share.sharing_content %></td>
-    <td><%= share.sum_graded %></td>
-    <td><%= share.total_grade %></td>
-    <td><%= share.remark %></td>
-    <td><%= link_to 'Show', share %></td>
-    <td><%= link_to 'Edit', edit_share_path(share) %></td>
-    <td><%= link_to 'Destroy', share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <form class="form-search">
+          <%= select_date Date.today, prefix: :share_date %>
+          <button type="submit" class="btn btn-xs btn-primary">查看</button>
+          <%= admins_only do %>
+              <%= link_to '设定分享', new_share_path, :class => 'btn btn-xs btn-success' %>
+          <% end %>
+        </form>
 
-<br />
+      </div>
 
-<%= link_to 'New Share', new_share_path %>
+      <table class="table table-striped">
+        <tr>
+          <th>日期</th>
+          <th>人员</th>
+          <th>分享内容</th>
+          <th></th>
+          <%= admins_only do %>
+              <th>评分</th>
+              <th>评分人数</th>
+              <th>已存档</th>
+              <th>操作</th>
+          <% end %>
+        </tr>
+
+        <% @shares.each do |share| %>
+            <tr>
+              <td><%= share.sharing_date %></td>
+              <td><%= share.user.username %></td>
+              <td><%= share.sharing_content %></td>
+              <td><!-- Button trigger modal -->
+                <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal">
+                  评分
+                </button>
+              </td>
+              <%= admins_only do %>
+                  <td><%= share.sum_graded %></td>
+                  <td><%= share.total_grade %></td>
+                  <td>
+                    <% if share.is_archived %>
+                        是
+                    <% else %>
+                        否
+                    <% end %>
+                  </td>
+                  <td><%= link_to '修改', edit_share_path(share), :class => 'btn btn-xs btn-info' %>
+                    <%= link_to '删除', share, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
+                  </td>
+              <% end %>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">给<%= share.user.username %>评分</h4>
+                  </div>
+                  <div class="modal-body" style="text-align: center;">
+
+                    <%= form_for('grade-form', :url => share_grade_path(share)) do |f| %>
+                        <div class="form-group">
+                        <%= select_tag(:grade_point, options_for_select((0..100).map { |c| [c, c] }, :selected => 100), {:class => 'form-control', :size => '10'}) %>
+                        </div>
+                        <div class="form-group">
+                          <%= f.submit '提交', :class => 'btn btn-success' %>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+
+                    <% end %>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

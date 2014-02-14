@@ -32,7 +32,7 @@
             <li><%= link_to t('global.menu.home'), root_path %></li>
             <li><%= link_to t('global.menu.blog'), posts_path %></li>
             <li><%= link_to t('global.menu.lunch'), orders_path %></li>
-            <li><%= link_to t('global.menu.share'), orders_path %></li>
+            <li><%= link_to t('global.menu.share'), shares_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -50,6 +50,7 @@
                         <li><%= link_to '餐馆列表', restaurants_path %></li>
                         <li class="divider"></li>
                         <li><%= link_to '设置晨会主持', sharer_choose_path %></li>
+                        <li><%= link_to '查看晨会评分', monthly_list_path %></li>
                     <% end %>
                     <li class="divider"></li>
                     <li><%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
@@ -72,9 +73,9 @@
   <div class="row">
     <div class="span12">
       <% flash.each do |key, value| %>
-          <div class='alert alert-info' id='<%= key %>'>
+          <div class='alert alert-danger' id='<%= key %>'>
             <a class="close" data-dismiss="alert">x</a>
-            <%= value %>
+            <span class="glyphicon glyphicon-check"></span><%= value %>
           </div>
       <% end %>
     </div>

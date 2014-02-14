@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
+
+      <div class="panel-heading">月度晨会评分</div>
+      <div class="panel-body">
+
+        <form class="form-search">
+          <%= select_year Date.today, prefix: :shares_year %>
+          <%= select_month Date.today, prefix: :shares_month %>
+          <button type="submit" class="btn btn-primary">查看</button>
+        </form>
+      </div>
+
+      <table class="table table-striped">
+        <tr>
+          <th>日期</th>
+          <th>人员</th>
+          <th>分享内容</th>
+          <%= admins_only do %>
+              <th>评分</th>
+              <th>评分人数</th>
+              <th>已存档</th>
+          <% end %>
+        </tr>
+
+        <% @shares.each do |share| %>
+            <tr>
+              <td><%= share.sharing_date %></td>
+              <td><%= share.user.username %></td>
+              <td><%= share.sharing_content %></td>
+              <%= admins_only do %>
+                  <td><%= share.sum_graded %></td>
+                  <td><%= share.total_grade %></td>
+                  <td>
+                    <% if share.is_archived %>
+                        是
+                    <% else %>
+                        否
+                    <% end %>
+                  </td>
+              <% end %>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

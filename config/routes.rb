@@ -3,6 +3,8 @@ Slapp::Application.routes.draw do
   get '/users/:id/set', to: 'users#set_is_sharer', as: 'set_is_sharer'
   get '/users/:id/unset', to: 'users#unset_is_sharer', as: 'unset_is_sharer'
   get '/shares/choose', to: 'shares#choose', as: 'sharer_choose'
+  get '/shares/list', to: 'shares#list', as: 'monthly_list'
+  match '/shares/:id/grade', to: 'shares#grade', as: 'share_grade'
 
   resources :shares
 

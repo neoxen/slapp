@@ -18,13 +18,13 @@
     <td><%= dish.description %></td>
     <td>
       <% if ( dish.is_today && (dish.set_date.today?)) %>
-          <%= link_to '取消', unset_is_today_path(dish) ,:class => 'btn btn-mini btn-danger'%>
+          <%= link_to '取消', unset_is_today_path(dish) ,:class => 'btn btn-xs btn-danger'%>
       <% else %>
-          <%= link_to '选定', set_is_today_path(dish), :class => 'btn btn-mini'%>
+          <%= link_to '选定', set_is_today_path(dish), :class => 'btn btn-xs btn-success'%>
       <% end %>
     </td>
-    <td><%= link_to '修改', edit_dish_path(dish) ,:class => 'btn btn-mini'%>
-        <%= link_to '删除', dish, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-mini btn-danger' %></td>
+    <td><%= link_to '修改', edit_dish_path(dish) ,:class => 'btn btn-xs btn-primary'%>
+        <%= link_to '删除', dish, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-xs btn-danger' %></td>
   </tr>
 <% end %>
 </table>

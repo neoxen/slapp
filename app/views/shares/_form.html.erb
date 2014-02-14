@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.select :user_id, options_from_collection_for_select(@active_sharers, "id", "username", @share.user_id), :prompt => "选择分享人员" %>
   </div>
   <div class="field">
     <%= f.label :sharing_date %><br />
@@ -25,17 +25,16 @@
   </div>
   <div class="field">
     <%= f.label :sum_graded %><br />
-    <%= f.number_field :sum_graded %>
+    <%= f.text_field :sum_graded %>
   </div>
   <div class="field">
     <%= f.label :total_grade %><br />
-    <%= f.number_field :total_grade %>
+    <%= f.text_field :total_grade %>
   </div>
   <div class="field">
-    <%= f.label :remark %><br />
-    <%= f.text_field :remark %>
-  </div>
+      <%= f.check_box :is_archived %><%= f.label :is_archived %>
+    </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  :class => 'btn btn-xs btn-success' %>
   </div>
 <% end %>
