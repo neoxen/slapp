@@ -49,7 +49,7 @@ class SharesController < InheritedResources::Base
     shares_date = Date.civil(shares_year, shares_month, 1)
     shares_date_month = shares_date.end_of_month
 
-    @shares = Share.where(:sharing_date => shares_date..shares_date_month)
+    @shares = Share.where(:sharing_date => shares_date..shares_date_month).order('sharing_date DESC')
 
     respond_to do |format|
       format.html # list.html.erb
