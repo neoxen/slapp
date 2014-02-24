@@ -9,7 +9,7 @@ gem 'devise'
 gem 'activeadmin'
 #gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'meta_search',    '>= 1.1.0.pre'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,7 +18,7 @@ gem 'sqlite3'
 
 gem 'mysql2'
 
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby', '3.1.2'
 
 
 # Gems used only for assets and not required
