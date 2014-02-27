@@ -15,3 +15,9 @@
 //= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
+
+$(document).ready(function() {
+  $('#submit_order').click(function(event){
+    this.addClass('disabled');
+  });
+});

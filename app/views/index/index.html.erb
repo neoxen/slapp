@@ -38,7 +38,7 @@
                   <td><%= dish.name %></td>
                   <td><%= dish.price %></td>
                   <td><%= dish.set_date %></td>
-                  <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success' %>
+                  <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success', :id => 'submit_order' %>
                   </td>
                 </tr>
             <% end %>
