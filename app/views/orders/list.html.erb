@@ -31,7 +31,7 @@
               <td><%= order.dish_price %></td>
               <%= admins_only do %>
                   <td>
-                    <%= link_to '删除', order, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+                    <%= link_to '删除', order, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
                   </td>
               <% end %>
             </tr>

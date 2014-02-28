@@ -17,7 +17,7 @@
 //= require bootstrap
 
 $(document).ready(function() {
-  $('#submit_order').click(function(event){
-    this.addClass('disabled');
+  $('#submit_order').on('click', function(event){
+    $(this).addClass('disabled');
   });
 });

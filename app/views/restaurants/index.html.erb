@@ -19,8 +19,8 @@
             <td><%= restaurant.phone %></td>
             <td><%= restaurant.remark %></td>
             <td>
-              <%= link_to '修改', edit_restaurant_path(restaurant), :class => 'btn btn-mini' %>
-              <%= link_to '删除', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+              <%= link_to '修改', edit_restaurant_path(restaurant), :class => 'btn btn-primary btn-xs' %>
+              <%= link_to '删除', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger' %>
             </td>
           </tr>
       <% end %>
