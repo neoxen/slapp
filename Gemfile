@@ -18,7 +18,7 @@ gem 'sqlite3'
 
 gem 'mysql2'
 
-gem 'bcrypt-ruby', '3.1.2'
+# gem 'bcrypt-ruby', '3.1.2'
 
 
 # Gems used only for assets and not required

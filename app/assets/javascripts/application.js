@@ -17,7 +17,10 @@
 //= require bootstrap
 
 $(document).ready(function() {
-  $('#submit_order').on('click', function(event){
-    $(this).addClass('disabled');
+  $('.submit_order').each(function(index){
+  	$(this).bind("click",function(){
+  		$(this).addClass('disabled');
+	    $('#myModal').modal('show'); 
+	});
   });
 });

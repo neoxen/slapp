@@ -19,7 +19,7 @@
                   <td><%= dish.name %></td>
                   <td><%= dish.price %></td>
                   <td><%= dish.set_date %></td>
-                  <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success', :id => 'submit_order' %>
+                  <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success submit_order', :id => 'submit_order' %>
                   </td>
                 </tr>
             <% end %>
@@ -85,5 +85,23 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">正在提交ing</h4>
+      </div>
+      <div class="modal-body">
+        亲，请耐性等待，您的订餐正在提交中~~~
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 

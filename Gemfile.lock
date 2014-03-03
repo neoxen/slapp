@@ -158,7 +158,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  bcrypt-ruby (= 3.1.2)
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   devise
