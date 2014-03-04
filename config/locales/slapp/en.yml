@@ -8,7 +8,7 @@ en:
         truncate: "..."
   global:
     application:
-      name: "ShenLu Internal Application"
+      name: "Smart Lunch Application"
     menu:
       home: "Home"
       blog: "Personal Blog"
