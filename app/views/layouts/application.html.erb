@@ -21,9 +21,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <!-- <span class="icon-bar"></span> -->
           </button>
-          <img src="/assets/logo.png" class="navbar-brand"/>
+          <img src="/assets/logo.png" class="navbar-brand" style="height:70px;"/>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +32,7 @@
             <li><%= link_to t('global.menu.home'), root_path %></li>
             <li><%= link_to t('global.menu.blog'), posts_path %></li>
             <li><%= link_to t('global.menu.lunch'), orders_path %></li>
-            <li><%= link_to t('global.menu.share'), shares_path %></li>
+            <!-- <li>< % = link _to t ('global.menu.share'), shares _path %></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -86,9 +86,9 @@
     </div>
   </div>
   <footer class="footer">
-    <p class="pull-left">智慧点餐系统 v2.0.1</p>
+    <p class="pull-left">智慧点餐系统 v2.1.0</p>
 
-    <p class="pull-right">&copy; 2013-2014 <a target="_blank" href="http://www.wrisc.cn">武汉智慧城市研究院</a></p>
+    <p class="pull-right">&copy; 2013-2014 <a target="_blank" href="http://www.wrisc.cn">智慧生活</a></p>
   </footer>
 </div>
 
