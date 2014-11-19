@@ -7,6 +7,9 @@ gem 'thin'
 
 gem 'kaminari'
 
+# angularjs functionalities
+gem 'angularjs-rails'
+
 gem 'devise'
 gem 'activeadmin'
 #gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'

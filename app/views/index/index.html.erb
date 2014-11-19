@@ -20,6 +20,14 @@
                   <i class="icon-comment icon-black"></i>&nbsp;查看更多
               <% end %>
             </p>
+            <div ng-controller="OrdersCtrl">
+              <ul>
+                <li ng-repeat="order in orders"> 
+                  {{order.user_id}}, {{order.dish_name}} 
+                  <!-- <a href='' ng - click="delete Order(order.id, $ index)">Delete</a> -->
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
       <div class="col-md-6">

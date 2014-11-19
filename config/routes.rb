@@ -1,5 +1,14 @@
 Slapp::Application.routes.draw do
 
+  # scope 'api' do    
+  #   resources :orders, only: [:index,:create,:update,:destroy], defaults: {format: :json} 
+  # end
+  namespace :api, :defaults => {:format => :json}  do
+    namespace :v1 do
+      resources :orders
+    end
+  end
+
   get '/users/:id/set', to: 'users#set_is_sharer', as: 'set_is_sharer'
   get '/users/:id/unset', to: 'users#unset_is_sharer', as: 'unset_is_sharer'
   get '/shares/choose', to: 'shares#choose', as: 'sharer_choose'
