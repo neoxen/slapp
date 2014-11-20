@@ -16,6 +16,10 @@ class API::V1::OrdersController < ApplicationController
 	    #    @total += order.dish_price
 	    # end
 
+	    @orders.each do |order|
+	       order.remark = order.user.username
+	    end
+
 	    respond_to do |format|
 	      format.html # list.html.erb
 	      format.json { render json: @orders }

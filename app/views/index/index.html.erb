@@ -3,31 +3,19 @@
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-success">
-          <div class="panel-heading">最新通知公告</div>
+          <div class="panel-heading">已经点餐</div>
 
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered" ng-controller="OrdersCtrl">
               <tr>
-                <td style="text-align: center"><%= @last_post.title %></td>
-                <td style="text-align: right"><%= @last_post.created_at.strftime("%Y-%m-%d") %>
-                <td>
+                <td style="text-align: center">人员</td>
+                <td style="text-align: center">菜名</td>
               </tr>
-              <tr>
-                <td colspan="2"><%= @last_post.content %></td>
+              <tr ng-repeat="order in orders">
+                <td style="text-align: center">{{order.remark}}</td>
+                <td style="text-align: center">{{order.dish_name}}</td> 
+                <!-- <a href='' ng - click="delete Order(order.id, $ index)">Delete</a> -->
               </tr>
             </table>
-            <p style="text-align: center;">
-              <%= link_to posts_path, :class => 'btn btn-success' do %>
-                  <i class="icon-comment icon-black"></i>&nbsp;查看更多
-              <% end %>
-            </p>
-            <div ng-controller="OrdersCtrl">
-              <ul>
-                <li ng-repeat="order in orders"> 
-                  {{order.user_id}}, {{order.dish_name}} 
-                  <!-- <a href='' ng - click="delete Order(order.id, $ index)">Delete</a> -->
-                </li>
-              </ul>
-            </div>
         </div>
       </div>
       <div class="col-md-6">
