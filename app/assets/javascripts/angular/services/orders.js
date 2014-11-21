@@ -8,5 +8,8 @@ app.factory('Order', ['$resource', function($resource) {
 	Order.prototype.delete = function(stId) { 
 		this.service.remove({orderId: stId}); 
 	};
+	Order.prototype.create = function(stId) { 
+		return this.service.save({id: stId}); 
+	};
 	return new Order; 
 }]);

@@ -40,7 +40,7 @@ class OrdersController < InheritedResources::Base
       if @user_order.save
         user_account.amount -= @dish.price
         user_account.save
-        format.html { redirect_to orders_path, notice: t('global.order.info1') + @user_order.dish_name + t('global.order.info2') + @user_order.dish_price.to_s + t('global.order.info3') }
+        format.html { redirect_to root_path, notice: t('global.order.info1') + @user_order.dish_name + t('global.order.info2') + @user_order.dish_price.to_s + t('global.order.info3') }
         format.json { render json: @user_order }
       else
         format.html { render action: "index" }

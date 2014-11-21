@@ -3,17 +3,24 @@
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-success">
-          <div class="panel-heading">已经点餐</div>
+          <div class="panel-heading">准备就餐</div>
 
             <table class="table table-striped table-bordered" ng-controller="OrdersCtrl">
               <tr>
-                <td style="text-align: center">人员</td>
-                <td style="text-align: center">菜名</td>
+                <th style="text-align: center">人员</th>
+                <th style="text-align: center">菜名</th>
+                <%= admins_only do %>
+                  <th>操作</th>
+                <% end %>
               </tr>
               <tr ng-repeat="order in orders">
                 <td style="text-align: center">{{order.remark}}</td>
                 <td style="text-align: center">{{order.dish_name}}</td> 
-                <!-- <a href='' ng - click="delete Order(order.id, $ index)">Delete</a> -->
+                <%= admins_only do %>
+                  <td>
+                    <a href='' class="btn btn-xs btn-danger" ng-click="deleteOrder(order.id, $index)">删除</a>
+                  </td>
+                <% end %>       
               </tr>
             </table>
         </div>
