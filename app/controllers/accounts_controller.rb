@@ -9,7 +9,11 @@ class AccountsController < ApplicationController
 
     @total = 0
     @accounts.each do |account|
-      @total += account.amount
+      if account.nil?
+        account = Account.new(:amount => 0)
+      else
+        @total += account.amount
+      end
     end
   end
 
