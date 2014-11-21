@@ -19,12 +19,12 @@
                 <td><%= account.amount %></td>
                 <td><%= account.remark %></td>
                 <td>
-                  <%= link_to '充值', edit_account_path(account), :class => 'btn btn-xs btn-success' %>
+                  <%= link_to '充值', edit_account_path(account), :class => 'btn btn-xs btn-success' %></td>
               </tr>
           <% end %>
           <tr>
             <td><span class="label label-success">余额总计</span></td>
-            <td><span class="label badge-success"><%= @total %>元</span></td>
+            <td><span class="badge"><%= @total %>元</span></td>
             <td colspan="2"></td>
           </tr>
         </table>
