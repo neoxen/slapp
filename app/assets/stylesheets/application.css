@@ -11,21 +11,7 @@
  *= require_self
  *= require_tree .
 */
-.navbar a.brand {
-	color: white;
-}
 
-.container a.btn.btn-primary {
-	color: white;
-}
-
-.container a.btn.btn-mini.btn-danger {
-	color: white;
-}
-
-.submit_order {
-    
-}
 
 
 .display-section {

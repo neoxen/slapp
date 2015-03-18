@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./angular
+//= require_tree ./adminlte
 //= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
