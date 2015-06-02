@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app='SmartLunch'>
+<head>
+  <title><%= t('global.application.name') %></title>
+  <link href="<%= image_path("favicon.ico") %>" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <!--[if lt IE 9]>
+  <script src="/assets/html5shiv.min.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+
+  <nav role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <!-- <span class="icon-bar"></span> -->
+          </button>
+          <img src="/assets/logo.png" class="navbar-brand" style="height:70px;"/>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to t('global.menu.home'), root_path %></li>
+            <li><%= link_to t('global.menu.blog'), posts_path %></li>
+            <li><%= link_to t('global.menu.lunch'), orders_path %></li>
+            <!-- <li>< % = link _to t ('global.menu.share'), shares _path %></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.username %>
+                    <% if current_user.account.amount > 0 %>
+                        <span class="label label-success">账户余额：<%= current_user.account.amount %></span>
+                    <% else %>
+                        <span class="label label-danger">账户余额：<%= current_user.account.amount %></span>
+                    <% end %>
+                    <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to t('global.menu.changepassword'), edit_registration_path(:user) %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to '查看今日订餐', list_today_path %></li>
+                    <%= admins_only do %>
+                        <li><%= link_to '设置今日菜单', dishes_path %></li>
+                        <li><%= link_to '账户管理', accounts_path %></li>
+                        <li><%= link_to '充值记录', recharges_path %></li>
+                        <li><%= link_to '餐馆列表', restaurants_path %></li>
+<!--                         <li class = "divider"></li>
+                        <li>< = link _to '设置晨会主持', sharer _choose _path ></li>
+                        <li>< = link _to '查看晨会评分', monthly _list _path ></li> -->
+                    <% end %>
+                    <li class="divider"></li>
+                    <li><%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
+                  </ul>
+                </li>
+            <% else %>
+                <li>
+                  <%= link_to t('global.menu.signin'), new_user_session_path %></li>
+                <li>
+                  <%= link_to t('global.menu.signup'), new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <% flash.each do |key, value| %>
+          <div class='alert alert-danger' id='<%= key %>'>
+            <a class="close" data-dismiss="alert">x</a>
+            <span class="glyphicon glyphicon-check"></span><%= value %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <%= yield %>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="pull-left">智慧点餐系统 v3.0.1</p>
+
+    <p class="pull-right"><a target="_blank" href="http://www.wrisc.cn">智慧生活 用<span style="color: red;" class="glyphicon glyphicon-heart"></span>创造</a></p>
+  </footer>
+</div>
+
+
+</body>
+</html>

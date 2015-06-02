@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:role => 'form', :class => 'cd-form'}) do |f| %>
 
     <p class="fieldset">
@@ -26,3 +27,83 @@
         </p>
 
 <% end %>
+=======
+<div class="login-box">
+  <div class="login-logo">
+    <b>Smart</b>Lunch
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <section class="content-header">
+      <div class="row">
+        <div class="span12">
+          <% flash.each do |key, value| %>
+              <div class='callout callout-info' id='<%= key %>'>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-warning"></i> <%= value %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <p class="login-box-msg">请输入用户名和密码</p>
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:role => 'form'}) do |f| %>
+        <div class="form-group has-feedback">
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <%= f.text_field :username, :type => 'text', :required => 'required', :autofocus => 'autofocus', :class => 'form-control', :placeholder => '用户名' %>
+          </div>
+        </div>
+        <div class="form-group has-feedback">
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <%= f.password_field :password, :type => 'password', :required => 'required', :class => 'form-control', :placeholder => '密码' %>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8">
+            <% if devise_mapping.rememberable? -%>
+                <div class="form-checkbox icheck">
+                  <label>
+                    <%= f.check_box :remember_me, :checked => 'checked' %> <%= f.label :remember_me %>
+                  </label>
+                </div>
+            <% end -%>
+          </div>
+          <!-- /.col -->
+          <div class="col-xs-4">
+            <%= f.submit t('global.menu.signin'), :class => 'btn btn-primary btn-block btn-flat' %>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="social-auth-links text-center">
+      <p>- 或者 -</p>
+        <%= link_to new_user_registration_path  do %>
+          注册新的账号
+        <% end %>
+          <br>
+    </div>
+    <div class="row text-center">
+      <span class="glyphicon glyphicon-info-sign"></span>
+      <span>忘记密码？请联系系统管理员.</span>
+    </div>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+
+<script>
+    $(document.body).addClass("login-page");
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+>>>>>>> adminlte
