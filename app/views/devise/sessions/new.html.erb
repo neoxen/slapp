@@ -1,6 +1,6 @@
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Smart</b>Lunch</a>
+    <b>Smart</b>Lunch
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -8,9 +8,9 @@
       <div class="row">
         <div class="span12">
           <% flash.each do |key, value| %>
-              <div class='alert alert-danger' id='<%= key %>'>
-                <a class="close" data-dismiss="alert">x</a>
-                <span class="glyphicon glyphicon-check"></span><%= value %>
+              <div class='callout callout-info' id='<%= key %>'>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-warning"></i> <%= value %>
               </div>
           <% end %>
         </div>
@@ -20,12 +20,16 @@
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:role => 'form'}) do |f| %>
         <div class="form-group has-feedback">
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
           <%= f.text_field :username, :type => 'text', :required => 'required', :autofocus => 'autofocus', :class => 'form-control', :placeholder => '用户名' %>
-          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
         </div>
         <div class="form-group has-feedback">
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
           <%= f.password_field :password, :type => 'password', :required => 'required', :class => 'form-control', :placeholder => '密码' %>
-          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
         </div>
 
         <div class="row">
@@ -33,7 +37,7 @@
             <% if devise_mapping.rememberable? -%>
                 <div class="form-checkbox icheck">
                   <label>
-                    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                    <%= f.check_box :remember_me, :checked => 'checked' %> <%= f.label :remember_me %>
                   </label>
                 </div>
             <% end -%>
@@ -47,7 +51,10 @@
 
     <div class="social-auth-links text-center">
       <p>- 或者 -</p>
-      <a href="register.html" class="text-center">注册新的账号</a><br>
+        <%= link_to new_user_registration_path  do %>
+          注册新的账号
+        <% end %>
+          <br>
     </div>
     <div class="row text-center">
       <span class="glyphicon glyphicon-info-sign"></span>

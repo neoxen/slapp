@@ -1,52 +1,55 @@
 <div class="row">
-  <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="panel panel-success">
-          <div class="panel-heading">准备就餐</div>
-
-            <table class="table table-striped table-bordered" ng-controller="OrdersCtrl">
-              <tr>
-                <th style="text-align: center">人员</th>
-                <th style="text-align: center">菜名</th>
-                <%= admins_only do %>
-                  <th>操作</th>
-                <% end %>
-              </tr>
-              <tr ng-repeat="order in orders">
-                <td style="text-align: center">{{order.remark}}</td>
-                <td style="text-align: center">{{order.dish_name}}</td> 
-                <%= admins_only do %>
-                  <td>
-                    <a href='' class="btn btn-xs btn-danger" ng-click="deleteOrder(order.id, $index)">删除</a>
-                  </td>
-                <% end %>       
-              </tr>
-            </table>
-        </div>
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">准备就餐</h3>
       </div>
-      <div class="col-md-6">
-        <div class="panel panel-success">
-          <div class="panel-heading">今日菜单</div>
-          <table class="table table-striped table-bordered">
-            <tr>
-              <th>菜名</th>
-              <th>价格</th>
-              <th>日期</th>
-              <th>操作</th>
-            </tr>
-
-            <% @dishes_today.each do |dish| %>
-                <tr>
-                  <td><%= dish.name %></td>
-                  <td><%= dish.price %></td>
-                  <td><%= dish.set_date %></td>
-                  <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success submit_order', :id => 'submit_order' %>
-                  </td>
-                </tr>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover" ng-controller="OrdersCtrl">
+          <tr>
+            <th style="text-align: center">人员</th>
+            <th style="text-align: center">菜名</th>
+            <%= admins_only do %>
+                <th>操作</th>
             <% end %>
-          </table>
-        </div>
+          </tr>
+          <tr ng-repeat="order in orders">
+            <td style="text-align: center">{{order.remark}}</td>
+            <td style="text-align: center">{{order.dish_name}}</td>
+            <%= admins_only do %>
+                <td>
+                  <a href='' class="btn btn-xs btn-danger" ng-click="deleteOrder(order.id, $index)">删除</a>
+                </td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">今日菜单</h3>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tr>
+            <th>菜名</th>
+            <th>价格</th>
+            <th>日期</th>
+            <th>操作</th>
+          </tr>
+
+          <% @dishes_today.each do |dish| %>
+              <tr>
+                <td><%= dish.name %></td>
+                <td><%= dish.price %></td>
+                <td><%= dish.set_date %></td>
+                <td><%= link_to '选择', dish_order_path(dish), :class => 'btn btn-xs btn-success submit_order', :id => 'submit_order' %>
+                </td>
+              </tr>
+          <% end %>
+        </table>
       </div>
     </div>
   </div>
@@ -66,8 +69,14 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script>
+    $("i.fa.fa-home").closest("li").addClass("active");
+</script>
 
 

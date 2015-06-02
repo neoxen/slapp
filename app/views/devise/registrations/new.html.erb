@@ -1,36 +1,66 @@
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
-    <%= devise_error_messages! %>
+<div class="register-box">
+  <div class="register-logo">
+    <b>Smart</b>Lunch
+  </div>
 
-    <fieldset>
-      <legend><%= t('global.menu.signup') %></legend>
-      <div class="form-group">
-        <%= f.label :username, :class => 'col-sm-2 control-label' %>
-        <div class="col-xs-4">
-          <%= f.text_field :username, :class => 'text_field' ,:required => 'required' %> <span class='label label-info'>请使用＊汉字＊真实姓名</span>
+  <div class="register-box-body">
+
+    <section class="content-header">
+      <div class="row">
+        <div class="span12">
+          <% if (devise_error_messages!) != '' %>
+              <div class='callout callout-info'>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-warning"></i> <%= devise_error_messages! %>
+              </div>
+          <% end %>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label :email, :class => 'col-sm-2 control-label' %>
-        <div class="col-xs-4">
-          <%= f.email_field :email, :class => 'text_field' ,:required => 'required' %>
+    </section>
+
+    <p class="login-box-msg">请注册一个新的系统账号</p>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),
+                 :html => {:role => 'form'}) do |f| %>
+        <div class="form-group has-feedback">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          <%= f.text_field :username, :class => 'form-control' ,:required => 'required', :placeholder => '用户名',:autofocus => 'autofocus' %>
+        </div>
+          <span class='label label-info'>请使用＊汉字＊真实姓名</span>
+      </div>
+      <div class="form-group has-feedback">
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+          <%= f.email_field :email, :class => 'form-control' ,:required => 'required' , :placeholder => '电子邮箱'%>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label :password, :class => 'col-sm-2 control-label' %>
-        <div class="col-xs-4">
-          <%= f.password_field :password, :class => 'text_field' ,:required => 'required' %> <span class='label label-info'>密码注册后也可更改</span>
+      <div class="form-group has-feedback">
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <%= f.password_field :password, :class => 'form-control' ,:required => 'required', :placeholder => '密码' %>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation, :class => 'col-sm-2 control-label' %>
-        <div class="col-xs-4">
-          <%= f.password_field :password_confirmation, :class => 'text_field' ,:required => 'required' %>
+      <div class="form-group has-feedback">
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <%= f.password_field :password_confirmation, :class => 'form-control' ,:required => 'required', :placeholder => '确认密码' %>
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <%= f.submit t('global.menu.signup'), :class => 'btn btn-success' %>
-        </div>
+      <div class="form-group has-feedback">
+          <%= f.submit t('global.menu.signup'), :class => 'btn btn-primary btn-block btn-flat' %>
       </div>
-    </fieldset>
-<% end %>
+    <% end %>
+
+    <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <%= link_to new_user_session_path  do %>
+          返回登录页面
+      <% end %>
+    </div>
+
+  </div><!-- /.form-box -->
+</div><!-- /.register-box -->
+
+<script>
+    $(document.body).addClass("register-page");
+</script>

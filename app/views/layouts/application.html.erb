@@ -21,7 +21,10 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="/" class="logo"><img src="/assets/logo.png" style="height:40px;"/></a>
+    <div class="logo">
+      <span class="logo-mini"><img src="/assets/logo.png" style="height:30px;"/></span>
+      <span class="logo-lg"><img src="/assets/logo.png" style="height:40px;"/> <b>Smart</b>Lunch</span>
+    </div>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -37,13 +40,7 @@
           <% if user_signed_in? %>
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"><%= current_user.username %>
-                  <% if current_user.account.amount > 0 %>
-                      账户余额：<%= current_user.account.amount %></span>
-                  <% else %>
-                      <span class="label label-danger">账户余额：<%= current_user.account.amount %></span>
-                  <% end %>
-                  <b class="caret"></b>
+                  <i class="fa fa-gears"></i><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to t('global.menu.changepassword'), edit_registration_path(:user) %></li>
@@ -83,22 +80,44 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+          <img src="/assets/adminlte/user-160x160.png" class="img-circle" />
         </div>
         <div class="pull-left info">
-          <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
+          <p><%= current_user.username %></p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p>
+            <% if current_user.account.amount > 0 %>
+                <span><i class="fa fa-circle text-success"></i>
+                账户余额：<%= current_user.account.amount %></span>
+            <% else %>
+                <span><i class="fa fa-circle text-danger"></i>
+                  账户余额：<%= current_user.account.amount %></span>
+            <% end %>
+          </p>
         </div>
       </div>
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><%= link_to t('global.menu.home'), root_path %><</li>
-        <li><%= link_to t('global.menu.blog'), posts_path %></li>
-        <li><%= link_to t('global.menu.lunch'), orders_path %></li>
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="treeview">
+          <%= link_to root_path do %>
+            <i class="fa fa-home"></i>
+            <span><%= t('global.menu.home') %></span>
+          <% end %>
+        </li>
+        <li class="treeview">
+          <%= link_to posts_path do %>
+          <i class="fa fa-list"></i>
+          <span><%= t('global.menu.blog') %></span>
+            <% end %>
+        </li>
+        <li class="treeview">
+          <%= link_to orders_path do %>
+          <i class="fa fa-book"></i>
+          <span><%=  t('global.menu.lunch') %></span>
+          <% end %>
+        </li>
       </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
@@ -109,10 +128,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="row">
-        <div class="span12">
+        <div class="col-md-8 col-md-offset-2">
           <% flash.each do |key, value| %>
-              <div class='alert alert-info' id='<%= key %>'>
-                <a class="close" data-dismiss="alert">x</a>
+              <div class='callout callout-info' id='<%= key %>'>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <span class="glyphicon glyphicon-check"></span><%= value %>
               </div>
           <% end %>
@@ -135,13 +154,13 @@
       <p>智慧生活 用<span style="color: red;" class="glyphicon glyphicon-heart"></span>创造</p>
     </div>
     <!-- Default to the left -->
-    <p>智慧点餐系统 v3.0.1 &copy; 2015 <a target="_blank" href="http://wrisc.cn">WRISC</a></p>
+    <p>智慧点餐系统 v3.2.0 &copy; 2015 <a target="_blank" href="http://wrisc.cn">WRISC</a></p>
   </footer>
 
 </div><!-- ./wrapper -->
 
     <script>
-        $(document.body).addClass("skin-black");
+        $(document.body).addClass("skin-black-light sidebar-mini");
     </script>
 
 <% else %>
