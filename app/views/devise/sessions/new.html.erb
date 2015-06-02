@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:role => 'form', :class => 'cd-form'}) do |f| %>
-
-    <p class="fieldset">
-        <%= f.label :username, :class => 'image-replace cd-username' %>
-        <%= f.text_field :username, :type => 'text', :required => 'required', :autofocus => 'autofocus' , :placeholder => '用户名' ,
-                         :class => 'full-width has-padding has-border' %>
-    </p>
-
-
-      <p class="fieldset">
-        <%= f.label :password, :class => 'image-replace cd-password' %>
-        <%= f.password_field :password, :type => 'password' , :required => 'required' , :placeholder => '密码' ,
-                        :class => 'full-width has-padding has-border' %>
-        <a href="#0" class="hide-password">Hide</a>
-      </p>
-
-      <% if devise_mapping.rememberable? -%>
-          <p class="fieldset">
-            <%= f.check_box :remember_me ,:checked => 'checked' %>
-            <label for="remember-me"> <%= f.label :remember_me %></label>
-          </p>
-      <% end -%>
-
-        <p class="fieldset">
-          <%= f.submit t('global.menu.signin'), :class => 'full-width' %>
-        </p>
-
-<% end %>
-=======
 <div class="login-box">
   <div class="login-logo">
     <b>Smart</b>Lunch
@@ -106,4 +76,4 @@
         });
     });
 </script>
->>>>>>> adminlte
+
