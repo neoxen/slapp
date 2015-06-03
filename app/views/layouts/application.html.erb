@@ -43,9 +43,17 @@
                   <i class="fa fa-gears"></i><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to t('global.menu.changepassword'), edit_registration_path(:user) %></li>
+                  <li>
+                    <%= link_to  edit_registration_path(:user) do %>
+                        <span><i class="fa fa-tasks"></i> <%= t('global.menu.changepassword') %></span>
+                    <% end %>
+                  </li>
                   <li class="divider"></li>
-                  <li><%= link_to '查看今日订餐', list_today_path %></li>
+                  <li>
+                    <%= link_to  list_today_path do %>
+                        <span><i class="fa fa-tasks"></i> 查看今日订餐</span>
+                    <% end %>
+                  </li>
                   <%= admins_only do %>
                       <li><%= link_to '设置今日菜单', dishes_path %></li>
                       <li><%= link_to '账户管理', accounts_path %></li>
@@ -56,7 +64,11 @@
                                               <li>< = link _to '查看晨会评分', monthly _list _path ></li> -->
                   <% end %>
                   <li class="divider"></li>
-                  <li><%= link_to t('global.menu.signout'), destroy_user_session_path, :method => :delete %></li>
+                  <li>
+                    <%= link_to destroy_user_session_path, :method => :delete do %>
+                        <span><i class="fa fa-sign-out"></i> <%= t('global.menu.signout') %></span>
+                    <% end %>
+                  </li>
                 </ul>
               </li>
           <% else %>
